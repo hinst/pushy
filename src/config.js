@@ -1,1 +1,1 @@
-$exports.title = "hinst.ru";
+$exports.pageTitle = "hinst.ru";
