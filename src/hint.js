@@ -70,3 +70,17 @@ $exports.parseXml = function(text) {
 		$print("Error while parsing XML", e, $excstack());
 	}
 };
+
+// -- string
+$exports.stringReplace = function(text, a, b) {
+	var position = $sfind(text, 0, a);
+	var result = position;
+	if (position != null) {
+		var left = $smake(position);
+		left = $sblit(left, 0, text, 0, $ssize(left));
+		var right = $make($ssize(text) - position - $ssize(a));
+		right = $sblit(right, 0, text, position + $ssize(a), $ssize(right));
+		result = left + b + right;
+	}
+	return result;
+};
