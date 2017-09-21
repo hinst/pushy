@@ -1,1 +1,1 @@
-nekoc -o pushy src/app.js src/hint.js src/webs.js
+nekoc -o pushy src/app.js src/hint.js src/webs.js src/testStringReplace.js

@@ -73,13 +73,13 @@ $exports.parseXml = function(text) {
 
 // -- string
 $exports.stringReplace = function(text, a, b) {
+	var result = text;
 	var position = $sfind(text, 0, a);
-	var result = position;
 	if (position != null) {
 		var left = $smake(position);
-		left = $sblit(left, 0, text, 0, $ssize(left));
-		var right = $make($ssize(text) - position - $ssize(a));
-		right = $sblit(right, 0, text, position + $ssize(a), $ssize(right));
+		$sblit(left, 0, text, 0, $ssize(left));
+		var right = $smake($ssize(text) - position - $ssize(a));
+		$sblit(right, 0, text, position + $ssize(a), $ssize(right));
 		result = left + b + right;
 	}
 	return result;
